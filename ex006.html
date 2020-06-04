@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos em DOM</title>
+    <style>
+        div{
+            background-color: dodgerblue;
+            color: gainsboro;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Para ver a lista completa de eventos que o JavaScript possui:<br>
+    <a href="https://developer.mozilla.org/pt-BR/docs/Web/Events" target = "_blank">Clique aqui para saber mais</a></p>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    <script>
+        var a = window.document.getElementById('area')
+        /*
+        Os comandos abaixo podem ser utilizados para poluir menos o código HTML.
+        Notar que os comandos abaixo não necessitam do "on" antes dos eventos.
+        
+        a.addEventListener('click',clicar)
+        a.addEventListener('mouseenter',entrar)
+        a.addEventListener('mouseout',sair)
+        */
+        function clicar(){
+            a.innerText = 'Clicou!'
+            a.style.background = 'purple'
+        }
+        function entrar(){
+            a.style.background = 'red'
+            a.innerText = 'Entrou!'   
+        }
+        function sair(){
+            a.style.background = 'gray'
+            a.innerText = 'Saiu'
+        }
+
+    </script>
+</body>
+</html>
