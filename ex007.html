@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt=bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+            font: normal 18pt Arial    
+        }
+        input{
+            font: normal 18pt Arial 
+        }
+    </style>
+</head>
+<body>
+    <h1>Operando valores</h1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" name="somar" id="somar">
+    <input type="button" value="Zerar" name="zerar" id="zerar">
+    <div><div id="resultado">Resultado:</div>
+    <div id="campo_resultado">0</div></div>
+    
+    <script>
+        var botaoSomar = window.document.getElementById('somar')
+        var botaoZerar = window.document.getElementById('zerar')
+        var resultado = window.document.getElementById('campo_resultado')
+
+        botaoSomar.addEventListener('click',somar)
+        botaoZerar.addEventListener('click',zerar)
+
+        function somar(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)            
+            var soma = n1+n2
+            resultado.innerHTML = soma
+        }
+        function zerar(){
+            resultado.innerHTML = "0"
+        }
+    </script>
+</body>
+</html>
